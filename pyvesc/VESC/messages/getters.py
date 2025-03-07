@@ -305,7 +305,6 @@ class GetMcConf(metaclass=pyvesc.VESCMessage):
         ('bms.fwd_can_mode', 'B', 1),
     ]
     
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields:
