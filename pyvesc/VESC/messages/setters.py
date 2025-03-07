@@ -98,3 +98,25 @@ class Alive(metaclass=VESCMessage):
     id = VedderCmd.COMM_ALIVE
     fields = []
 
+'''
+The message class FocDetectApply implements the commands for initialising
+foc-parameters for the VESC
+'''
+
+# Defining message ids.
+COMM_DETECT_APPLY_ALL = VedderCmd.COMM_DETECT_APPLY_ALL_FOC # = 58
+
+class FocDetectApply(metaclass=pyvesc.VESCMessage):
+    id = COMM_DETECT_APPLY_ALL # foc_detect_apply_all has id = 58
+    can_id = None
+
+    # Fields from comm/commands.c line 2271, in vedders bldc repo.
+    fields = [
+        ('detect_can', 'B'), # CAN is false to ensure UART connection
+        ('max_power_loss', 'f'),
+        ('min_current', 'f'),
+        ('max_current', 'f'),
+        ('openloop_rpm', 'f'),
+        ('sl_erpm', 'f'),
+    ]
+
