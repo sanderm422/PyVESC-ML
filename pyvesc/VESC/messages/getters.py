@@ -310,3 +310,11 @@ class GetMcConf(metaclass=pyvesc.VESCMessage):
         super().__init__(*args, **kwargs)
         for field in self.fields:
             setattr(self, field[0], kwargs.get(field[0], 0))  # Default to 0 if not passed
+
+    def __str__(self):
+      output = "GetMcConf:\n"
+      for field in self.fields:
+          field_name = field[0]
+          value = getattr(self, field_name, None)
+          output += f"  {field_name}: {value}\n"
+      return output
