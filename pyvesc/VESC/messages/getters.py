@@ -87,7 +87,7 @@ among alot of other paramter tuning.
 
 # Message ids
 COMM_GET_MCCONF = VedderCmd.COMM_GET_MCCONF # 14
-class GetMcConf(metaclass=pyvesc.VESCMessage):
+class GetMcConf(metaclass=VESCMessage):
     
     # **TODO** : Adjust scaling factor and check data types
     
