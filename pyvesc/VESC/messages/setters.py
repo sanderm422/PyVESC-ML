@@ -106,7 +106,7 @@ foc-parameters for the VESC
 # Defining message ids.
 COMM_DETECT_APPLY_ALL = VedderCmd.COMM_DETECT_APPLY_ALL_FOC # = 58
 
-class FocDetectApply(metaclass=pyvesc.VESCMessage):
+class FocDetectApply(metaclass=VESCMessage):
     id = COMM_DETECT_APPLY_ALL # foc_detect_apply_all has id = 58
     can_id = None
 
